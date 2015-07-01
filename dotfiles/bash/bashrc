@@ -1,0 +1,10 @@
+source ~/bin/dotfiles/bash/env
+source ~/bin/dotfiles/bash/alias
+source ~/bin/dotfiles/bash/private
+source ~/bin/dotfiles/bash/service
+source ~/bin/dotfiles/bash/prompt
+source ~/bin/dotfiles/bash/git
+source ~/bin/dotfiles/git/alias
+source ~/bin/dotfiles/bash/function
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
