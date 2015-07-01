@@ -23,6 +23,13 @@ Find a section [user] and specify your name and email.
 
 
 
+### Create a private file for your private staff
+
+
+```bash
+$ touch ~/bin/dotfiles/bash/private
+```
+
 ###Setting up
 
 **NOTE:** Before do this step. Make sure that you don't have same files in your root folder and if you do, copy them before.
