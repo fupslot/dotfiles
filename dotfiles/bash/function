@@ -46,3 +46,15 @@ gdiff () {
 
     git difftool $BCHO $BCHT -y -t Kaleidoscope
 }
+
+generate() {
+    if [[ $1 == "endpoint" || $1 == "e" ]] ; then yo angular-fullstack:endpoint $2 ; fi
+    if [[ $1 == "route" || $1 == "r" ]] ; then yo angular-fullstack:route $2 ; fi
+    if [[ $1 == "controller" || $1 == "c" || $1 == "ctrl" ]] ; then yo angular-fullstack:controller $2 ; fi
+    if [[ $1 == "filter" || $1 == "flt" ]] ; then yo angular-fullstack:filter $2 ; fi
+    if [[ $1 == "directive" || $1 == "d" || $1 == "dir" ]] ; then yo angular-fullstack:directive $2 ; fi
+    if [[ $1 == "service" || $1 == "s" || $1 == "srv" ]] ; then yo angular-fullstack:service $2 ; fi
+    if [[ $1 == "provider" || $1 == "p" || $1 == "prv" ]] ; then yo angular-fullstack:provider $2 ; fi
+    if [[ $1 == "factory" || $1 == "f" || $1 == "fac" ]] ; then yo angular-fullstack:factory $2 ; fi
+    if [[ $1 == "decorator" || $1 == "dec" ]] ; then yo angular-fullstack:decorator $2 ; fi
+}
