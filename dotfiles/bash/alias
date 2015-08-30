@@ -20,3 +20,5 @@ alias showhidden="defaults write com.apple.finder AppleShowAllFiles TRUE;killall
 
 alias c="clear"
 alias pubkey="ssh-keygen -f ~/.ssh/id_rsa -y | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias orm="open README.md"
+alias ort="open README.txt"
