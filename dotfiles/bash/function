@@ -58,3 +58,7 @@ generate() {
     if [[ $1 == "factory" || $1 == "f" || $1 == "fac" ]] ; then yo angular-fullstack:factory $2 ; fi
     if [[ $1 == "decorator" || $1 == "dec" ]] ; then yo angular-fullstack:decorator $2 ; fi
 }
+
+lagoa_mount() {
+    sshfs -o IdentityFile=~/.ssh/id_rsa parallels@lagoa.dev:/home/parallels/lagoa_src/Scene-Composer-App ~/Projects/Scene-Composer-App
+}
