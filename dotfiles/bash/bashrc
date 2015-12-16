@@ -8,3 +8,6 @@ source ~/bin/dotfiles/git/alias
 source ~/bin/dotfiles/bash/function
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export NVM_DIR="/Users/eugenebrodsky/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
