@@ -12,7 +12,7 @@ $ git clone git@github.com:fupslot/dotfiles.git bin
 
 Open a file .gitconfig
 ```bash
-$ vim ~/bindotfiles/git/.gitconfig
+$ vim ~/bin/dotfiles/git/.gitconfig
 ```
 
 Find a section [user] and specify your name and email.
