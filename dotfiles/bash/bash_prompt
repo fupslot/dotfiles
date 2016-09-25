@@ -65,7 +65,7 @@ set_prompts() {
 
 
     function prompt_git() {
-        local s="" branchColor="$cyan" dirty=false
+        local s=""
 
         # check if we're in a git repo. (fast)
         git rev-parse --is-inside-work-tree &>/dev/null || return
@@ -79,19 +79,16 @@ set_prompts() {
     			# Check for uncommitted changes in the index.
     			if ! $(git diff --quiet --ignore-submodules --cached); then
     				s+=" 🙄";
-            dirty=true
     			fi;
 
     			# Check for unstaged changes.
     			if ! $(git diff-files --quiet --ignore-submodules --); then
-    				s+=" 😩";
-            dirty=true
+    				s+=" 🤓";
     			fi;
 
     			# Check for untracked files.
     			if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-    				s+=" 😡";
-            dirty=true
+    				s+=" 😳";
     			fi;
 
     			# Check for stashed files.
@@ -111,13 +108,8 @@ set_prompts() {
             git rev-parse --short HEAD 2> /dev/null || \
             echo '(unknown)')";
 
-
-        if $dirty; then
-          branchColor="$red";
-        fi
-
         [ -n "${s}" ] && s="${s}";
-        echo -e "${1}${branchColor}${branchName}${s}";
+        echo -e "${1}${2}${branchName}${s}";
 
         return
     }
@@ -132,7 +124,7 @@ set_prompts() {
     PS1+="\n\[$bold\]"
     PS1+="\[$(usernamehost)\]"                              # username at host
     PS1+="\[$yellow\]\w"                                     # working directory
-    PS1+="\$(prompt_git \"$white on \")"   # git repository details
+    PS1+="\$(prompt_git \"$white on \" \"$cyan\")"   # git repository details
     PS1+="\n"
     PS1+="\[$reset$green\]☞ \[$reset\]"
 
