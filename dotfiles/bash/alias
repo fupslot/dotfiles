@@ -34,3 +34,5 @@ alias stopMysql="sudo /usr/local/mysql/support-files/mysql.server stop"
 
 alias startFTP="sudo launchctl load -w /System/Library/LaunchDaemons/ftp.plist"
 alias stopFTP="sudo launchctl unload /System/Library/LaunchDaemons/ftp.plist"
+
+alias dc="docker-compose"
