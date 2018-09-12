@@ -1,8 +1,17 @@
 [user]
 	name = Eugene Brodsky
 	email = fupslot@gmail.com
+
 [color]
-	ui = true
+    branch = always
+    diff = always
+    grep = always
+    interactive = always
+    pager = true
+    showbranch = auto
+    status = auto
+    ui = always
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -12,23 +21,39 @@
 	frag = magenta bold
 	old = red bold
 	new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = magenta
+    branch = cyan
+
 [url "git@github.com:fupslot/"]
 	insteadOf = fupslot:
+
 [core]
-	excludesfile = ~/.gitignore_global
-  editor = vim
+    excludesfile = /Users/eugenebrodsky/.gitignore_global
+    editor = vim
+    autocrlf = input
+
 [diff]
-    tool = Kaleidoscope
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+    tool = vimdiff
+
+[difftool]
+    prompt = false
+
 [merge]
-    tool = Kaleidoscope
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
+    tool = vimdiff
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
