@@ -24,14 +24,6 @@ alias orm="open README.md"
 alias ort="open README.txt"
 
 # Services (Shortcuts)
-alias startApache="sudo apachectl start"
-alias stopApache="sudo apachectl stop"
-alias restartApache="sudo apachectl restart"
-
-alias restartMysql="sudo /usr/local/mysql/support-files/mysql.server restart"
-alias startMysql="sudo /usr/local/mysql/support-files/mysql.server start"
-alias stopMysql="sudo /usr/local/mysql/support-files/mysql.server stop"
-
 alias startFTP="sudo launchctl load -w /System/Library/LaunchDaemons/ftp.plist"
 alias stopFTP="sudo launchctl unload /System/Library/LaunchDaemons/ftp.plist"
 

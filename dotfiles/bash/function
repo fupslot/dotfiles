@@ -105,3 +105,20 @@ transfer() {
     # cleanup
     rm -f $tmpfile
 }
+
+iplookup() {
+    DB=""
+
+    if [[ $1 == "city" ]]; then DB="/etc/mmdb/GeoLite2-City.mmdb"; fi
+    if [[ $1 == "country" ]]; then DB="/etc/mmdb/GeoLite2-Country.mmdb"; fi
+
+    echo $DB
+
+    if [ -z DB ];
+    then
+        echo "Expect 1 argument to be one of [\"city\", \"country\"]"
+        return 1
+    fi
+
+    mmdblookup --file=$DB --ip=$2 $3 $4 $5
+}
